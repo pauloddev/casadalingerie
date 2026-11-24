@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa da Lingerie — Dedicação e cuidado</title>
+<meta name="description" content="Casa da Lingerie — Dedicação e cuidado. Lojas em Caruaru, Garanhuns e Campina Grande.">
+<meta name="theme-color" content="#F893AF">
+<link rel="canonical" href="https://casadalingerie.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Casa da Lingerie">
+<meta property="og:title" content="Casa da Lingerie — Dedicação e cuidado">
+<meta property="og:description" content="Lojas em Caruaru, Garanhuns e Campina Grande. Compre no conforto da sua casa pelo link.">
+<meta property="og:url" content="https://casadalingerie.vercel.app/">
+<meta property="og:image" content="https://casadalingerie.vercel.app/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo da Casa da Lingerie">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casa da Lingerie — Dedicação e cuidado">
+<meta name="twitter:description" content="Lojas em Caruaru, Garanhuns e Campina Grande.">
+<meta name="twitter:image" content="https://casadalingerie.vercel.app/assets/og.jpg">
+<link rel="icon" type="image/webp" href="assets/logo.webp">
+<link rel="preload" as="font" type="font/woff2" href="assets/agelast-pm.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/logo.webp">
+<link rel="preload" as="image" href="assets/poster.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Agelast PM";src:url(assets/agelast-pm.woff2) format("woff2");font-weight:400;font-display:swap}
+:root{--rosa:#F893AF;--branco:#FDFDFD;--rosa-tinta:#B2486A;--rosa-claro:#FDE9EF;--rosa-sombra:#E77C9B;
+--serif:"Agelast PM","DM Sans",system-ui,sans-serif;--sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--ease:cubic-bezier(.22,.7,.18,1)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--branco);background:var(--rosa) radial-gradient(120% 55% at 50% 0,rgba(255,255,255,.38),transparent 62%) no-repeat;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.wrap{max-width:540px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2rem)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;text-transform:uppercase}
+.kicker{display:flex;align-items:center;justify-content:center;gap:.9rem;font:500 .68rem/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;text-align:center}
+.kicker::before,.kicker::after{content:"";flex:0 0 1.8rem;height:1px;background:rgba(253,253,253,.8)}
+/* HERO */
+header{text-align:center;padding:3.4rem 0 .4rem}
+.logo{display:block;width:min(86%,360px);height:auto;margin:0 auto}
+.hero-k{margin:1.6rem auto 1.3rem}
+h1{font-size:clamp(2.1rem,9.6vw,3.2rem);line-height:1.12;letter-spacing:.08em;text-shadow:0 3px 22px rgba(120,30,60,.35)}
+/* CARROSSEL */
+.car{margin-top:2.2rem;position:relative}
+.frame{position:relative;padding:6px;border:1px solid rgba(253,253,253,.75);border-radius:24px;background:rgba(253,253,253,.14);box-shadow:0 0 0 1px rgba(253,253,253,.22),0 0 44px rgba(253,253,253,.5),0 30px 60px -30px rgba(120,30,60,.65)}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;border-radius:18px}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center}
+.in{position:relative;aspect-ratio:1/1;background:var(--rosa-sombra);overflow:hidden}
+.in img,.in video{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border:0;background:var(--branco);color:var(--rosa-tinta);font-size:22px;padding-left:4px;cursor:pointer;display:none;place-items:center}
+.play.show{display:grid}
+.nav{position:absolute;top:50%;margin-top:-22px;width:42px;height:42px;border:0;background:var(--branco);color:var(--rosa-tinta);font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center;z-index:3;transition:background .4s var(--ease)}
+.nav:hover{background:var(--rosa-claro)}
+.nav.p{left:14px}.nav.n{right:14px}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:1.1rem}
+.dots button{width:18px;height:2px;border:0;background:rgba(253,253,253,.45);cursor:pointer;padding:0;transition:.4s var(--ease)}
+.dots button.on{width:34px;background:var(--branco)}
+.star{position:absolute;width:16px;height:16px;background:#fff;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);opacity:.9;animation:tw 4s ease-in-out infinite;filter:drop-shadow(0 0 6px #fff)}
+.s1{top:-12px;left:-6px}.s2{top:38%;right:-8px;width:12px;height:12px;animation-delay:1.3s}.s3{bottom:-10px;left:12%;width:13px;height:13px;animation-delay:2.4s}
+@keyframes tw{0%,100%{opacity:.25;transform:scale(.6) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(45deg)}}
+/* SEÇÕES */
+section.blk{margin-top:clamp(3.6rem,13vw,5.2rem);text-align:center}
+h2{font-size:clamp(1.3rem,5.4vw,1.9rem);line-height:1.2;letter-spacing:.05em;margin:1.1rem 0 0;text-wrap:balance;overflow-wrap:anywhere;text-shadow:0 3px 20px rgba(120,30,60,.3)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:1.7rem}
+.step{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:132px;padding:1.4rem .5rem;background:var(--branco);border:1px solid rgba(248,147,175,.45);color:var(--rosa-tinta);transition:border-color .5s var(--ease),transform .6s var(--ease)}
+.step:hover{border-color:var(--rosa);transform:translateY(-4px)}
+.step svg{width:1.7rem;height:1.7rem;stroke:var(--rosa);fill:none;stroke-width:1.4;margin-bottom:.8rem}
+.step h3{font-size:.98rem;line-height:1.15;letter-spacing:.07em;color:var(--rosa);text-shadow:none}
+.cta p{font:500 1.02rem/1.55 var(--sans);max-width:22rem;margin:1.2rem auto 1.9rem}
+.btn{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;min-height:3.6rem;padding:0 1.2rem;font:500 .8rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;border-radius:0;cursor:pointer;margin-bottom:.9rem;transition:background .45s var(--ease),color .45s var(--ease),transform .45s var(--ease),box-shadow .45s var(--ease)}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-w{background:var(--branco);color:var(--rosa-tinta);box-shadow:0 14px 34px -16px rgba(120,30,60,.55)}
+.btn-w:hover{background:var(--rosa-claro)}
+.btn-l{background:transparent;color:var(--branco);border-color:rgba(253,253,253,.85)}
+.btn-l:hover{background:var(--branco);color:var(--rosa-tinta)}
+footer{text-align:center;padding:3.4rem 0 2.6rem;font:500 .66rem/1.6 var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.in-view{opacity:1;transform:none}
+@media (min-width:700px){.wrap{max-width:580px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="wrap">
+  <header>
+    <img class="logo" src="assets/logo.webp" alt="Casa da Lingerie" width="940" height="363" fetchpriority="high">
+    <p class="kicker hero-k">Caruaru · Garanhuns · Campina Grande</p>
+    <h1>Dedicação<br>e cuidado.</h1>
+  </header>
+
+  <section class="car rv" aria-label="Galeria">
+    <i class="star s1"></i><i class="star s2"></i><i class="star s3"></i>
+    <div class="frame">
+      <button class="nav p" aria-label="Anterior">‹</button>
+      <button class="nav n" aria-label="Próximo">›</button>
+      <div class="track" id="track">
+        <div class="slide"><div class="in"><video id="vid" poster="assets/poster.webp" muted loop playsinline preload="auto" autoplay><source src="assets/video.mp4" type="video/mp4"></video><button class="play" id="play" aria-label="Reproduzir vídeo">▶</button></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto01.webp" alt="Coleção primavera verão" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto02.webp" alt="Lingerie branca" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto03.webp" alt="Moda praia" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto04.webp" alt="Conjunto rosa" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto05.webp" alt="Body preto" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto06.webp" alt="Conjunto de renda branca" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto07.webp" alt="Conjuntos verde e branco" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto08.webp" alt="Conjuntos verde e preto" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto09.webp" alt="Sutiã de renda preto" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto10.webp" alt="Conjunto verde" width="900" height="900" loading="lazy" decoding="async"></div></div>
+        <div class="slide"><div class="in"><img src="assets/foto11.webp" alt="Detalhe da renda verde" width="900" height="900" loading="lazy" decoding="async"></div></div>
+      </div>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <section class="blk rv">
+    <p class="kicker">Nossas lojas</p>
+    <h2>Encontre a Casa da Lingerie</h2>
+    <div class="grid">
+      <div class="step"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><h3>Caruaru</h3></div>
+      <div class="step"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><h3>Garanhuns</h3></div>
+      <div class="step"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><h3>Campina<br>Grande</h3></div>
+    </div>
+  </section>
+
+  <section class="blk cta rv">
+    <p class="kicker">Fale com a gente</p>
+    <h2>Compre no conforto da sua casa pelo link</h2>
+    <p>Chame no WhatsApp e escolha suas peças com todo o cuidado que você merece.</p>
+    <a class="btn btn-w" href="https://wa.me/558197047300" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.2.7-1.4 1.3-2 1.3-.5.1-1.2.1-1.9-.1a14 14 0 0 1-5.5-3.4c-1.7-1.7-2.5-3.4-2.6-3.7s-.9-1.6-.5-2.6c.4-1 .9-1.1 1.2-1.1h.4c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.3.3c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.2.6-.1l2 1c.3.1.5.2.5.4.1.2.1.8-.1 1.2z"/></svg>
+      Falar pelo WhatsApp
+    </a>
+    <a class="btn btn-l" href="https://www.instagram.com/casadalingerie5/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+      Ver no Instagram
+    </a>
+  </section>
+
+  <footer>© 2026 Casa da Lingerie</footer>
+</div>
+
+<script>
+(function(){
+  var rv=[].slice.call(document.querySelectorAll('.rv'));
+  var ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in-view');ro.unobserve(x.target)}})},{threshold:.12});
+  rv.forEach(function(x){ro.observe(x)});
+
+  var t=document.getElementById('track'),s=[].slice.call(t.children),d=document.getElementById('dots'),v=document.getElementById('vid'),pb=document.getElementById('play'),cur=0,tm=null,manual=false;
+  s.forEach(function(_,i){var b=document.createElement('button');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=function(){manual=true;go(i)};d.appendChild(b)});
+  var dots=[].slice.call(d.children);
+  function go(i){i=(i+s.length)%s.length;t.scrollTo({left:i*t.clientWidth,behavior:'smooth'})}
+
+  // vídeo: tenta direto, depois via blob, e por fim botão de play
+  var triedBlob=false;
+  function tryPlay(){var p=v.play();if(p&&p.catch)p.catch(function(){pb.classList.add('show')})}
+  v.addEventListener('playing',function(){pb.classList.remove('show')});
+  v.addEventListener('error',function(){
+    if(triedBlob)return;triedBlob=true;
+    fetch('assets/video.mp4').then(function(r){return r.blob()}).then(function(b){v.src=URL.createObjectURL(b);v.load();tryPlay()}).catch(function(){pb.classList.add('show')});
+  },true);
+  pb.onclick=function(){manual=true;tryPlay()};
+  v.addEventListener('click',function(){if(v.paused)tryPlay()});
+  v.loop=false;
+  v.addEventListener('ended',function(){if(cur===0&&!manual)go(1);else{v.currentTime=0}});
+  tryPlay();
+
+  function schedule(){
+    clearTimeout(tm);if(manual)return;
+    tm=setTimeout(function(){go(cur+1)},cur===0?19000:4500);
+  }
+  function set(i){cur=i;dots.forEach(function(b,k){b.className=k===i?'on':''});
+    if(i===0){if(v.ended||v.currentTime>15)v.currentTime=0;tryPlay()}else{v.pause()}
+    var n=s[i+1]&&s[i+1].querySelector('img');if(n)n.loading='eager';
+    schedule()}
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)set(s.indexOf(x.target))})},{root:t,threshold:.6});
+  s.forEach(function(x){io.observe(x)});
+  document.querySelector('.nav.p').onclick=function(){manual=true;go(cur-1)};
+  document.querySelector('.nav.n').onclick=function(){manual=true;go(cur+1)};
+  ['touchstart','mousedown','wheel'].forEach(function(ev){t.addEventListener(ev,function(){manual=true;clearTimeout(tm)},{passive:true})});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)v.pause();else if(cur===0)tryPlay()});
+  set(0);
+})();
+</script>
+</body>
+</html>
